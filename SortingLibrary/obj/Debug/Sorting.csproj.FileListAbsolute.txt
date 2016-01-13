@@ -1,0 +1,5 @@
+c:\users\akshay\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\SortingAlgorithms.pdb
+c:\users\akshay\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\Sorting.csprojResolveAssemblyReference.cache
+c:\users\akshay\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\SortingAlgorithms.pdb
+c:\users\akshay\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\SortingAlgorithms.dll
+c:\users\akshay\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\SortingAlgorithms.dll

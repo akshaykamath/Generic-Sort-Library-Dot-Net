@@ -1,0 +1,1 @@
+c:\users\akshay\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\SortingAlgorithms.exe.config
