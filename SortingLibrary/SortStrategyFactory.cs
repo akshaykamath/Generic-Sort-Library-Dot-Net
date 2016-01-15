@@ -8,7 +8,8 @@ namespace Sort
     {
         BubbleSort,
         SelectionSort,
-        InsertionSort
+        InsertionSort,
+        HeapSort
     }
 
     public class SortStrategyFactory
@@ -24,20 +25,26 @@ namespace Sort
             get { return _instance; }
         }
 
-        public ISortable<T> GetSortStrategy<T>(SortStrategy sortStrategy, IComparer<T> comparer)
+        public ISortable<T> GetSortStrategy<T>(SortStrategy sortStrategy, IComparer<T> comparer, T[] sortArray)
         {
             ISortable<T> sorter = null;
 
             switch (sortStrategy)
             {
                 case SortStrategy.BubbleSort:
-                    sorter = new BubbleSort<T>(comparer);
+                    sorter = new BubbleSort<T>(comparer, sortArray);
                     break;
                 case SortStrategy.InsertionSort:
-                    sorter = new InsertionSort<T>(comparer);
+                    sorter = new InsertionSort<T>(comparer, sortArray);
                     break;
                 case SortStrategy.SelectionSort:
-                    sorter = new SelectionSort<T>(comparer);
+                    sorter = new SelectionSort<T>(comparer, sortArray);
+                    break;
+                case SortStrategy.HeapSort:
+                    sorter = new HeapSort<T>(comparer, sortArray);
+                    break;
+                default:
+                    sorter = new HeapSort<T>(comparer, sortArray);
                     break;
             }
 

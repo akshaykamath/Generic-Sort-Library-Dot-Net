@@ -9,12 +9,12 @@ namespace AlgorithmsMain
     {
         static void Main(string[] args)
         {
-            int[] sortingArray = { 7, 2, 4, 1, 5, 3 };
+            int[] sortingArray = { 12,5,2,7,66 };
             IComparer<int> comparer = new SortComparer();
 
-            var sortStrategy = SortStrategyFactory.Instance.GetSortStrategy(SortStrategy.InsertionSort, comparer);
+            var sortStrategy = SortStrategyFactory.Instance.GetSortStrategy(SortStrategy.HeapSort, comparer, sortingArray);
             var context = new SortStrategyContext<int>(sortStrategy);
-            context.InvokeSort(sortingArray);
+            context.InvokeSort();
 
             for (int i = 0; i < sortingArray.Length; i++)
             {

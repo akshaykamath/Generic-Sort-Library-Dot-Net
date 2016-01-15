@@ -1,5 +1,6 @@
 ﻿using Sort.SortContext;
 using System.Collections.Generic;
+using System;
 
 namespace Sort.Algorithms
 {
@@ -7,23 +8,37 @@ namespace Sort.Algorithms
     {
         IComparer<T> _comparer;
 
-        public BubbleSort(IComparer<T> comparer)
+        public BubbleSort(IComparer<T> comparer, T[] sortingArray)
         {
             _comparer = comparer;
+            SortingArray = sortingArray;
         }
 
-        public void Sort(T[] sortingArray)
+        public T[] SortingArray
         {
-            int length = sortingArray.Length;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void Sort()
+        {
+            int length = SortingArray.Length;
             bool swap = false;
             do
             {
                 swap = false;
                 for (int i = 0; i < length - 1; i++)
                 {
-                    if (_comparer.Compare(sortingArray[i], sortingArray[i + 1]) == -1)
+                    if (_comparer.Compare(SortingArray[i], SortingArray[i + 1]) == -1)
                     {
-                        SortHelper.Swap(ref sortingArray[i], ref sortingArray[i + 1]);
+                        SortHelper.Swap(ref SortingArray[i], ref SortingArray[i + 1]);
                         swap = true;
                     }
                 }

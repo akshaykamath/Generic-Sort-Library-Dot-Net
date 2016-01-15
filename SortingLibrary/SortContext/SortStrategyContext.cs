@@ -9,9 +9,9 @@
             _sortStrategy = sortStrategy;
         }
 
-        public void InvokeSort(T[] sortingNumber)
+        public void InvokeSort()
         {
-            _sortStrategy.Sort(sortingNumber);
+            _sortStrategy.Sort();
         }       
     }
 }

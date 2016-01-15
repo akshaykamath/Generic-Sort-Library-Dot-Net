@@ -1,6 +1,7 @@
 ﻿using Sort.SortContext;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Sort.Algorithms
 {
@@ -8,25 +9,32 @@ namespace Sort.Algorithms
     {
         IComparer<T> _comparer;
 
-        public InsertionSort(IComparer<T> comparer)
+        public InsertionSort(IComparer<T> comparer, T[] sortArray)
         {
-            _comparer = comparer; 
+            _comparer = comparer;
+            SortingArray = sortArray;
         }
-    
-        public void Sort(T[] sortingArray)
+
+        public T[] SortingArray
         {
-            for (int i = 1; i < sortingArray.Length; i++)
+            get;
+            set;
+        }
+
+        public void Sort()
+        {
+            for (int i = 1; i < SortingArray.Length; i++)
             {
-                T value = sortingArray[i];
+                T value = SortingArray[i];
                 int hole = i - 1;
 
-                while (hole >= 0 && _comparer.Compare(sortingArray[hole], value) == decimal.MinusOne)
+                while (hole >= 0 && _comparer.Compare(SortingArray[hole], value) == decimal.MinusOne)
                 {
-                    sortingArray[hole + 1] = sortingArray[hole];
+                    SortingArray[hole + 1] = SortingArray[hole];
                     hole = hole - 1;
                 }
 
-                sortingArray[hole + 1] = value;
+                SortingArray[hole + 1] = value;
             }
         }
 
