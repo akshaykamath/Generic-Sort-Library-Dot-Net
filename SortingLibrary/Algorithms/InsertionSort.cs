@@ -1,21 +1,20 @@
-﻿using Sort.SortContext;
+﻿using SortingLib.SortContext;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
-namespace Sort.Algorithms
+namespace SortingLib.Algorithms
 {
-    internal class InsertionSort<T> : ISortable<T>
+    public class InsertionSort<T> : ISortable<T>
     {
         IComparer<T> _comparer;
 
-        public InsertionSort(IComparer<T> comparer, T[] sortArray)
+        public InsertionSort(IComparer<T> comparer, IList<T> sortArray)
         {
             _comparer = comparer;
             SortingArray = sortArray;
         }
 
-        public T[] SortingArray
+        public IList<T> SortingArray
         {
             get;
             set;
@@ -23,7 +22,7 @@ namespace Sort.Algorithms
 
         public void Sort()
         {
-            for (int i = 1; i < SortingArray.Length; i++)
+            for (int i = 1; i < SortingArray.Count; i++)
             {
                 T value = SortingArray[i];
                 int hole = i - 1;

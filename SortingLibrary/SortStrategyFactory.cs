@@ -1,17 +1,12 @@
-﻿using Sort.Algorithms;
-using Sort.SortContext;
+﻿using SortingLib.Algorithms;
+using SortingLib.SortContext;
 using System.Collections.Generic;
 
-namespace Sort
+namespace SortingLib
 {
-    public enum SortStrategy
-    {
-        BubbleSort,
-        SelectionSort,
-        InsertionSort,
-        HeapSort
-    }
-
+    /// <summary>
+    /// Factory that returns the sorting strategy class instance.
+    /// </summary>
     public class SortStrategyFactory
     {
         private static readonly SortStrategyFactory _instance = new SortStrategyFactory();
@@ -25,7 +20,7 @@ namespace Sort
             get { return _instance; }
         }
 
-        public ISortable<T> GetSortStrategy<T>(SortStrategy sortStrategy, IComparer<T> comparer, T[] sortArray)
+        public ISortable<T> GetSortStrategy<T>(SortStrategy sortStrategy, IComparer<T> comparer, IList<T> sortArray)
         {
             ISortable<T> sorter = null;
 

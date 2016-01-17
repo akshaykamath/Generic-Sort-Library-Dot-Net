@@ -1,19 +1,20 @@
-﻿using Sort.SortContext;
+﻿using SortingLib.SortContext;
 using System.Collections.Generic;
 
-namespace Sort.Algorithms
+namespace SortingLib.Algorithms
 {
-    internal class HeapSort<T> : ISortable<T>
+    public class HeapSort<T> : ISortable<T>
     {
         private IComparer<T> _comparer;
         private int _heapSize;
 
-        public T[] SortingArray
+        public IList<T> SortingArray
         {
-            get; set;
+            get;
+            set;
         }
 
-        public HeapSort(IComparer<T> comparer, T[] sortingArray)
+        public HeapSort(IComparer<T> comparer, IList<T> sortingArray)
         {
             _comparer = comparer;
             SortingArray = sortingArray;
@@ -58,15 +59,15 @@ namespace Sort.Algorithms
 
             if (dominatingIndex != index)
             {
-                SortHelper.Swap(ref SortingArray[index], ref SortingArray[dominatingIndex]);
+                SortingArray.SwapItemsAtIndices(index, dominatingIndex);                
                 Heapify(dominatingIndex);
             }
         }
 
         private void BuildHeap()
         {
-            _heapSize = SortingArray.Length;
-            for (int i = SortingArray.Length / 2; i >= 0; i--)
+            _heapSize = SortingArray.Count;
+            for (int i = SortingArray.Count / 2; i >= 0; i--)
             {
                 Heapify(i);
             }
@@ -74,9 +75,9 @@ namespace Sort.Algorithms
 
         public void Sort()
         {
-            for (int i = SortingArray.Length - 1; i > 0; i--)
+            for (int i = SortingArray.Count - 1; i > 0; i--)
             {
-                SortHelper.Swap(ref SortingArray[0], ref SortingArray[i]);
+                SortingArray.SwapItemsAtIndices(0, i);                
                 _heapSize = _heapSize - 1;
                 Heapify(0);
             }

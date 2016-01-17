@@ -1,9 +1,10 @@
-﻿
-namespace Sort.SortContext
+﻿using System.Collections.Generic;
+
+namespace SortingLib.SortContext
 {
     public interface ISortable<T>
     {
-        T[] SortingArray { get; set; }
+        IList<T> SortingArray { get; set; }
         void Sort();        
     }
 }

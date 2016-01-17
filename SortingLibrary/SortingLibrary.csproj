@@ -51,6 +51,7 @@
     <Compile Include="Algorithms\BubbleSort.cs" />
     <Compile Include="Algorithms\SelectionSort.cs" />
     <Compile Include="ISortable.cs" />
+    <Compile Include="SortConstants.cs" />
     <Compile Include="SortHelper.cs" />
     <Compile Include="SortContext\ISortable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

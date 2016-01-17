@@ -1,20 +1,19 @@
-﻿using Sort.SortContext;
+﻿using SortingLib.SortContext;
 using System.Collections.Generic;
-using System;
 
-namespace Sort.Algorithms
+namespace SortingLib.Algorithms
 {
-    internal class SelectionSort<T> : ISortable<T>
+    public class SelectionSort<T> : ISortable<T>
     {
         IComparer<T> _comparer;
 
-        public SelectionSort(IComparer<T> comparer, T[] sortingArray)
+        public SelectionSort(IComparer<T> comparer, IList<T> sortingArray)
         {
             _comparer = comparer;
             SortingArray = sortingArray;
         }
 
-        public T[] SortingArray
+        public IList<T> SortingArray
         {
             get;
             set;
@@ -22,11 +21,10 @@ namespace Sort.Algorithms
         
         public void Sort()
         {
-            //int count = 0;
-            for (int count = 0; count < SortingArray.Length; count++)
+            for (int count = 0; count < SortingArray.Count; count++)
             {
                 int lowest = count;
-                for (int i = count + 1; i < SortingArray.Length; i++)
+                for (int i = count + 1; i < SortingArray.Count; i++)
                 {
                     if (_comparer.Compare(SortingArray[i], SortingArray[lowest]) == 1)
                     {
@@ -34,7 +32,7 @@ namespace Sort.Algorithms
                     }
                 }
 
-                SortHelper.Swap(ref SortingArray[lowest], ref SortingArray[count]);
+                SortingArray.SwapItemsAtIndices(lowest, count);
             }
         }
     }

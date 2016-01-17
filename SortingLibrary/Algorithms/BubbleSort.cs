@@ -1,35 +1,27 @@
-﻿using Sort.SortContext;
+﻿using SortingLib.SortContext;
 using System.Collections.Generic;
-using System;
 
-namespace Sort.Algorithms
+namespace SortingLib.Algorithms
 {
-    internal class BubbleSort<T>: ISortable<T>
+    public class BubbleSort<T>: ISortable<T>
     {
         IComparer<T> _comparer;
 
-        public BubbleSort(IComparer<T> comparer, T[] sortingArray)
+        public BubbleSort(IComparer<T> comparer, IList<T> sortingArray)
         {
             _comparer = comparer;
             SortingArray = sortingArray;
         }
 
-        public T[] SortingArray
+        public IList<T> SortingArray
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         public void Sort()
         {
-            int length = SortingArray.Length;
+            int length = SortingArray.Count;
             bool swap = false;
             do
             {
@@ -38,7 +30,7 @@ namespace Sort.Algorithms
                 {
                     if (_comparer.Compare(SortingArray[i], SortingArray[i + 1]) == -1)
                     {
-                        SortHelper.Swap(ref SortingArray[i], ref SortingArray[i + 1]);
+                        SortingArray.SwapItemsAtIndices(i, i + 1);
                         swap = true;
                     }
                 }

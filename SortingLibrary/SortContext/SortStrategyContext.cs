@@ -1,4 +1,4 @@
-﻿namespace Sort.SortContext
+﻿namespace SortingLib.SortContext
 {
     public class SortStrategyContext<T>
     {

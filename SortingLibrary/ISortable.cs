@@ -1,4 +1,4 @@
-﻿namespace Sort
+﻿namespace SortingLib
 {
     public interface ISortable
     {        

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort", "SortingLibrary\Sort.csproj", "{B9707A00-6D2B-4D31-A170-D961E05526CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingLibrary", "SortingLibrary\SortingLibrary.csproj", "{B9707A00-6D2B-4D31-A170-D961E05526CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingMain", "AlgorithmsMain\SortingMain.csproj", "{F89ED8DB-22AD-4042-A69E-C2B9ED21C392}"
 EndProject
